@@ -48,6 +48,7 @@ ZenQuotes allows 3 API calls/30 seconds
 - Ability to choose colors
 - Images as background
 - Ability to choose quote output color
+> - Change in device orientation changes output orientation
 
 ## Goals/Project Schedule:
 | Day | Deliverable | Status|
