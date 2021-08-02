@@ -1,0 +1,43 @@
+MVP:
+ Have 5 fonts randomized from Google fonts loaded
+  fonts in css, need to be randomized
+ Have 10 colors randomized
+ Have an transparent block for the quotes
+ Call the quotes
+ Media queries for size output
+ Return to home
+
+
+The Web Content Accessibility Guidelines (WCAG) specify a minimum size of 44 by 44 CSS pixels for all interactive elements.
+
+Use flex grid
+
+Responsive Web Design
+
+Taking the flexible layout concept, and formula, and reapplying it to all parts of a grid will create a completely dynamic website, scaling to every viewport size. For even more control within a flexible layout, you can also leverage the min-width, max-width, min-height, and max-height properties.
+
+Not recommended?:
+/* size info from https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  div {font-size: 20px;}}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  div {font-size: 30px;}}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  div {font-size: 40px;}}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  div {font-size: 50px;}}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  div {font-size: 60px;}}
+
+@media only screen and (orientation: landscape) {
+  orientation {background-color: #0000ff;}}

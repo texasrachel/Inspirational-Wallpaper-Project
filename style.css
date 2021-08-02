@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Amatic+SC&family=Lovers+Quarrel&family=Rochester&family=Shadows+Into+Light&display=swap');
 
+
 body {
   color: #ffffff;
   background-color: #808080;
@@ -16,24 +17,29 @@ div {
 }
 .image {
   border: 1px solid #008800;
+  font-size: 20px;
 }
 .overlay {
   opacity: 0.5;
   border: 1px solid #008800;
+  font-size: 25px;
 }
 .input {
   border: 1px solid #008800;
+  font-size: 20px;
 }
 button {
   background-color: #ffffff;
   border: none;
   color: #000000;
   text-align: center;
-  padding: 8px 15px;
+  padding: 10px 15px;
   margin: 30px;
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 18px;
   border-radius: 10px;
-  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19) ;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  min-width: 50px;
+  min-height: 50px;
 }
