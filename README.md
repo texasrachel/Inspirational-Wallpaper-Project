@@ -78,4 +78,4 @@ ZenQuotes allows 3 API calls/30 seconds
 | Return to home screen| M | 1hr | | |
 | Cleaning up code | L | 3hrs | | |
 | Testing| L | 3hrs | | |
-|Total | 37hrs | | |
+|Total |  | 37hrs | |
