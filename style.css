@@ -1,1 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Amatic+SC&family=Lovers+Quarrel&family=Rochester&family=Shadows+Into+Light&display=swap');
 
+body {
+  color: #ffffff;
+  background-color: #808080;
+  text-align: center;
+  font-weight: 400;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+}
+section {
+  border: 1px solid #008800;
+}
+div {
+  border: 1px solid #008800;
+}
+.image {
+  border: 1px solid #008800;
+}
+.overlay {
+  opacity: 0.5;
+  border: 1px solid #008800;
+}
+.input {
+  border: 1px solid #008800;
+}
+button {
+  background-color: #ffffff;
+  border: none;
+  color: #000000;
+  text-align: center;
+  padding: 8px 15px;
+  margin: 30px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19) ;
+}
