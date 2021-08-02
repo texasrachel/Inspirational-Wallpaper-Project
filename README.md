@@ -41,10 +41,10 @@ ZenQuotes allows 3 API calls/30 seconds
 - Have an transparent block for the quotes
 - Call the quotes
 - Media queries for size output
-- Button that pop-ups the image for saving, removing previous screen
 - Return to home
 
 ## Post-MVP:
+- Button that pop-ups the image for saving, removing previous screen
 - Ability to choose colors
 - Images as background
 - Ability to choose quote output color
