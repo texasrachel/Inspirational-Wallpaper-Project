@@ -65,8 +65,8 @@ ZenQuotes allows 3 API calls/30 seconds
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time|
 | -------------- | -------------- | ------------- | ------------- |------------- |
-| HTML Code | H | 3hrs | | |
-| CSS Code | H | 3hrs | | |
+| HTML Code | H | 3hrs | 1.5 | |
+| CSS Code | H | 3hrs | 1 | |
 | Javascript Psuedocode | H | 3hrs | | |
 | Javascript Functions | H | 5hrs | | |
 | Randomize colors | M | 1.5hr | | |
