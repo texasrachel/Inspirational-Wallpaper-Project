@@ -53,9 +53,9 @@ ZenQuotes allows 3 API calls/30 seconds
 ## Goals/Project Schedule:
 | Day | Deliverable | Status|
 | --------- | ----------------------------------- | ----------- |
-| August 2| Project set-up, approval  |  |
-| August 3| HTML, CSS setup |  |
-| August 4| Javascript |  |
+| August 2| Project set-up, approval  | Completed |
+| August 3| HTML, CSS setup <br> > Render data and Javascript | Completed |
+| August 4| Javascript <br> > Clean up |  |
 | August 5| Presentation |  |
 
 ## Priority Matrix:
@@ -65,14 +65,17 @@ ZenQuotes allows 3 API calls/30 seconds
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time|
 | -------------- | -------------- | ------------- | ------------- |------------- |
+| HTML Code | H | 3hrs | 2 | |
+| CSS Code | H | 3hrs | 2 | |
+| Javascript Psuedocode | H | 3hrs | 1 | |
 | HTML Code | H | 3hrs | 1.5 | |
 | CSS Code | H | 3hrs | 1 | |
 | Javascript Psuedocode | H | 3hrs | | |
 | Javascript Functions | H | 5hrs | | |
 | Randomize colors | M | 1.5hr | | |
-| Randomize fonts | M | 1.5hr | | |
+| Randomize fonts | M | 1.5hr | 0.5 | |
 | Javascript loops | H | 3hrs | | |
-| Call API | H | 3hrs | | |
+| Call API | H | 3hrs | .5 | |
 | Add event listeners | H | 2hrs | | |
 | Create & style DOM elements | H | 4hrs | | |
 | Add "new" screen image | L | 1hr | | |
