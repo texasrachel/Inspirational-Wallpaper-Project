@@ -2,6 +2,24 @@ MVP:
  Have 5 fonts randomized from Google fonts loaded
   fonts in css, need to be randomized
  Have 10 colors randomized
+  colors:
+    #ee9b00
+    #005f73
+    #656d4a
+    #c2c5aa
+    #6c757d
+
+    #577590
+    #ecbcfd
+    #c8e7ff
+    #892b64
+    #5c4d7d
+
+    #fad2e1
+    #d6e2e9
+    #4ecdc4
+    #ee964b
+    #b2967d
  Have an transparent block for the quotes
  Call the quotes
  Media queries for size output
@@ -41,3 +59,8 @@ Not recommended?:
 
 @media only screen and (orientation: landscape) {
   orientation {background-color: #0000ff;}}
+
+https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
+  
+LocalStorage can only store strings. To store arrays or objects, you would have to convert them to strings using JSON.stringify(). To use the value after getting it, convert it back to an object using JSON.parse().
+
