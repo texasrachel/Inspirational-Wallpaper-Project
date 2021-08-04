@@ -82,3 +82,10 @@ from: https://javascript.plainenglish.io/how-to-detect-a-mobile-device-with-java
 
 const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
 if (isMobile) { }
+
+/* #container {
+  /* width: 90vh;   */
+  background: url('https://res.cloudinary.com/texasrachel/image/upload/v1628000568/red-and-blue-wallpaper-iphone-x-wallpaper-ilikewallpaper_com_vi3fzf.jpg') no-repeat center;
+  background-size: contain;
+  background-color: rgba(175, 238, 238, .1);
+} */

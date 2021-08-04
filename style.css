@@ -1,39 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Amatic+SC&family=Lovers+Quarrel&family=Rochester&family=Shadows+Into+Light&display=swap');
 
 body {
-  color: #ffffff;
+  color: #000000;
   background-color: #008080;
   text-align: center;
   font-weight: 400;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
-  /* width: 300px; */
+  /* width: 500px; */
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  align-content: stretch;
 }
-main {
+container {
   min-height: 600px;
-  flex: stretch;
   border: 1px solid #2f4f4f;
   background-color: rgba(51, 170, 51, .1);
   position: absolute;
   z-index: 1;
+  align-items: center;
+  flex-wrap: nowrap;
 }
-section {
+/* section {
   border: 1px solid #ffffff;
   background-color: rgba(128, 128, 128, .5);
   /* max-width: 500px; */
-  margin: auto;
-}
+  /* margin: auto; }*/
+
 div {
   border: 1px solid #ff0000;
-  background-color: rgba(255, 255, 0, .4);
+  /* background-color: rgba(255, 255, 0, .4); */
 }
 h1 {
   font-family: fantasy;
-  background-color: rgba(244, 95, 120, .3);
+  color: rgba(244, 95, 120, .3);
+  order: 1;
 }
 button {
   background-color: #ffffff;
@@ -52,32 +56,41 @@ button {
   z-index: 30;
 }
 
-#container {
-  /* width: 90vh;   */
-  background: url('https://res.cloudinary.com/texasrachel/image/upload/v1628000568/red-and-blue-wallpaper-iphone-x-wallpaper-ilikewallpaper_com_vi3fzf.jpg') no-repeat center;
-  background-size: contain;
-  background-color: rgba(175, 238, 238, .1);
-}
-#image {
+#background-image {
   border: 1px solid #800080;
+  background: url(https://res.cloudinary.com/texasrachel/image/upload/v1628000568/red-and-blue-wallpaper-iphone-x-wallpaper-ilikewallpaper_com_vi3fzf.jpg) center no-repeat;
   background-color: rgba(128, 0, 128, .4);
   font-size: 20px;
-  width: 100%;
-  height: 100%;
-  z-index: 5;
+  width: 575px;
+  height: 600px;
+  z-index: 1;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  padding: 20px 20px;
+  margin: auto;
+  align-items: center;
+  align-items: center;
+  order: 1;
 }
 #overlay {
   opacity: 0.25;
   border: 1px solid #008800;
   background-color: rgba(0, 136, 0, .5);
   font-size: 25px;
+  text-align:center;
   position: relative;
+  margin: auto;
+  width: 80%;
+  height: 80%;
   z-index: 10; 
+  order: 5;
 }
-#input {
+#generate {
   border: 1px solid #ff0000;
   background-color: rgba(255, 0, 0, .4);
   font-size: 20px;
+  position: relative;
   align-items: center;
   justify-content: flex-end;
   z-index: 20;
@@ -91,11 +104,53 @@ button {
   /* max-height: 100%; */
   max-width: 600px;
   width: 100%;
-  display: none;
+  /* display: none; */
   z-index: 50;
-  background-color: rgba(175, 238, 238, .51);
+  /* background-color: rgba(175, 238, 238, .51); */
 }
 /* add hover to button */
 #start-over {
   display: none;
 }
+
+/* phones */
+/* @media only screen and (max-width: 767px) {
+  #wallpaperSmall {
+    display: block;
+  }
+  #wallpaperMedium {
+    display: none;
+  }
+  #wallpaperLarge {
+    display: none;
+  }
+}  */
+
+/* tablets */
+/* @media only screen and (min-width: 768x) {
+  #wallpaperSmall {
+    display: none;
+  }
+  #wallpaperMedium {
+    display: block;
+  }
+  #wallpaperLarge {
+    display: none;
+  }
+} */
+
+/* desktops */
+/* @media only screen and (min-width: 1025px) {
+  #wallpaperSmall {
+    display: none;
+  }
+  #wallpaperMedium {
+    display: none;
+  }
+  #wallpaperLarge {
+    display: block;
+  }
+} */
+
+/* @media only screen and (orientation: landscape) {
+  orientation {background-color: #0000ff;}} */
