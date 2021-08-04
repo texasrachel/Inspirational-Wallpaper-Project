@@ -2,69 +2,100 @@
 
 body {
   color: #ffffff;
-  background: url('https://res.cloudinary.com/texasrachel/image/upload/v1628000568/red-and-blue-wallpaper-iphone-x-wallpaper-ilikewallpaper_com_vi3fzf.jpg') #808080 no-repeat center;
-  background-size: 300px 300px;
+  background-color: #008080;
   text-align: center;
   font-weight: 400;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
-  width: 300px;
-  /* height: 1300px; */
+  /* width: 300px; */
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-container {
-  width: 90vh;  
+main {
+  min-height: 600px;
+  flex: stretch;
+  border: 1px solid #2f4f4f;
+  background-color: rgba(51, 170, 51, .1);
+  position: absolute;
+  z-index: 1;
 }
 section {
-  border: 1px solid #808080;
+  border: 1px solid #ffffff;
+  background-color: rgba(128, 128, 128, .5);
   /* max-width: 500px; */
   margin: auto;
 }
 div {
-  border: 1px solid #ffff00;
-}
-#image {
-  border: 1px solid #800080;
-  font-size: 20px;
-  width: 100%
-}
-#overlay {
-  opacity: 0.25;
-  border: 1px solid #008800;
-  background-color: #f0f0f0;
-  font-size: 25px;
-}
-#input {
   border: 1px solid #ff0000;
-  font-size: 20px;
-  align-items: center;
-  justify-content: flex-end;
+  background-color: rgba(255, 255, 0, .4);
 }
-#wallpaper {
-  border: 1px dashed #afeeee
-  font-size: 40px;
-  opacity: 0;
-  /* or change flexbox order */
-  /* -webkit-touch-callout:  */
-  max-height: 100%;
-  max-width: 100%;
-  order: 2;
+h1 {
+  font-family: fantasy;
+  background-color: rgba(244, 95, 120, .3);
 }
 button {
   background-color: #ffffff;
   border: none;
   color: #000000;
   text-align: center;
-  padding: 10px 15px;
+  padding: 10px;
   margin: 30px;
-  font-family: 'Roboto', sans-serif;
+  font-family: cursive;
   text-decoration: none;
   font-size: 18px;
   border-radius: 25px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  /* box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2); */
   min-width: 125px;
   min-height: 50px;
+  z-index: 30;
+}
+
+#container {
+  /* width: 90vh;   */
+  background: url('https://res.cloudinary.com/texasrachel/image/upload/v1628000568/red-and-blue-wallpaper-iphone-x-wallpaper-ilikewallpaper_com_vi3fzf.jpg') no-repeat center;
+  background-size: contain;
+  background-color: rgba(175, 238, 238, .1);
+}
+#image {
+  border: 1px solid #800080;
+  background-color: rgba(128, 0, 128, .4);
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+#overlay {
+  opacity: 0.25;
+  border: 1px solid #008800;
+  background-color: rgba(0, 136, 0, .5);
+  font-size: 25px;
+  position: relative;
+  z-index: 10; 
+}
+#input {
+  border: 1px solid #ff0000;
+  background-color: rgba(255, 0, 0, .4);
+  font-size: 20px;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 20;
+}
+#wallpaper {
+  border: 1px dashed #afeeee
+  font-size: 40px;
+  /* opacity: 0; */
+  /* or change flexbox order */
+  /* -webkit-touch-callout:  */
+  /* max-height: 100%; */
+  max-width: 600px;
+  width: 100%;
+  display: none;
+  z-index: 50;
+  background-color: rgba(175, 238, 238, .51);
+}
+/* add hover to button */
+#start-over {
+  display: none;
 }
