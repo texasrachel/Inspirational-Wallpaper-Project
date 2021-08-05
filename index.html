@@ -18,40 +18,22 @@
 
 <container>
   <h1>Random Inspirational Wallpaper</h1>
-  <canvas id="wallpaperSmall">
-    <div id="wallpaper">
-      <!-- add accessibility: Your browser does not support this app. -->
-    </div>
-  </canvas>
-  <!-- <canvas id="wallpaperMedium">
-    <div id="wallpaper">
-      Your browser does not support this app.
-    </div>
-  </canvas>
-  <canvas id="wallpaperLarge">
-      <div id="wallpaper">
-      Your browser does not support this app.
-    </div>
-  </canvas> -->
 
-  <div id="generate">
+  <div id="visible">
     <p>Click to generate a new wallpaper</p>
-    <button id="generate-button">click me</button>
+    <button id="button">click me</button>
+  </div>
+  <div id="hidden">
+    <button id="hidden-button">try again</button>
   </div>
 
-  <div id="background-image">fake wallpaper
-    <!-- <div id="overlay"> -->
-      <!-- overlay -->
-    <!-- </div> -->
-  </div>
+  <canvas id="wallpaper">
 
-  <div id="start-over">
-    <button id="reset-button">
-      Start Over
-    </button>
-  </div>
-
+  </canvas>
 </container>
 
+<footer>
+  Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a>
+</footer>
 </body>
 </html>

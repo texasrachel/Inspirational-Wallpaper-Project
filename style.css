@@ -2,155 +2,99 @@
 
 body {
   color: #000000;
-  background-color: #008080;
   text-align: center;
-  font-weight: 400;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
-  /* width: 500px; */
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  align-content: stretch;
 }
 container {
-  min-height: 600px;
   border: 1px solid #2f4f4f;
-  background-color: rgba(51, 170, 51, .1);
-  position: absolute;
   z-index: 1;
   align-items: center;
   flex-wrap: nowrap;
+  position: relative;
+  width: 100vh;
 }
-/* section {
-  border: 1px solid #ffffff;
-  background-color: rgba(128, 128, 128, .5);
-  /* max-width: 500px; */
-  /* margin: auto; }*/
 
 div {
   border: 1px solid #ff0000;
-  /* background-color: rgba(255, 255, 0, .4); */
+  align-items: center;
+  text-align: center;
 }
 h1 {
   font-family: fantasy;
   color: rgba(244, 95, 120, .3);
   order: 1;
 }
-button {
-  background-color: #ffffff;
-  border: none;
-  color: #000000;
-  text-align: center;
-  padding: 10px;
-  margin: 30px;
-  font-family: cursive;
-  text-decoration: none;
-  font-size: 18px;
-  border-radius: 25px;
-  /* box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2); */
-  min-width: 125px;
-  min-height: 50px;
-  z-index: 30;
-}
 
-#background-image {
-  border: 1px solid #800080;
-  background: url(https://res.cloudinary.com/texasrachel/image/upload/v1628000568/red-and-blue-wallpaper-iphone-x-wallpaper-ilikewallpaper_com_vi3fzf.jpg) center no-repeat;
-  background-color: rgba(128, 0, 128, .4);
-  font-size: 20px;
-  width: 575px;
-  height: 600px;
-  z-index: 1;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  padding: 20px 20px;
-  margin: auto;
-  align-items: center;
-  align-items: center;
-  order: 1;
-}
-#overlay {
-  opacity: 0.25;
-  border: 1px solid #008800;
-  background-color: rgba(0, 136, 0, .5);
-  font-size: 25px;
-  text-align:center;
-  position: relative;
-  margin: auto;
-  width: 80%;
-  height: 80%;
-  z-index: 10; 
+button {
+	background-color: purple;
+	border-radius: 30px;
+	border: 1px solid black;
+	color: gold;
+	font-family: Arial;
+	font-size: 20px;
+  width: 100px;
+  height: 50px;
+	margin: 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px gray;
   order: 5;
 }
-#generate {
-  border: 1px solid #ff0000;
-  background-color: rgba(255, 0, 0, .4);
-  font-size: 20px;
-  position: relative;
-  align-items: center;
-  justify-content: flex-end;
-  z-index: 20;
+button:hover {
+	background-color: gainsboro;
 }
+button:active {
+	position: relative;
+	top: 1px;
+}
+footer {
+  order: 7;
+  text-align: center;
+
+}
+
 #wallpaper {
-  border: 1px dashed #afeeee
   font-size: 40px;
-  /* opacity: 0; */
-  /* or change flexbox order */
-  /* -webkit-touch-callout:  */
-  /* max-height: 100%; */
-  max-width: 600px;
   width: 100%;
-  /* display: none; */
   z-index: 50;
-  /* background-color: rgba(175, 238, 238, .51); */
+  background: pink;
+  display: block;
+  order: 3;
 }
-/* add hover to button */
-#start-over {
-  display: none;
+#visible {
+  font-size: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  visibility: visible;
+}
+#hidden {
+  font-size: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  visibility: hidden;
+  background-color: rgba(255, 255, 255, .3);
 }
 
-/* phones */
-/* @media only screen and (max-width: 767px) {
-  #wallpaperSmall {
-    display: block;
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+  div {
+    font-size: 50px;
   }
-  #wallpaperMedium {
-    display: none;
+  #wallpaper{
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    font-size: 50px;
   }
-  #wallpaperLarge {
-    display: none;
-  }
-}  */
-
-/* tablets */
-/* @media only screen and (min-width: 768x) {
-  #wallpaperSmall {
-    display: none;
-  }
-  #wallpaperMedium {
-    display: block;
-  }
-  #wallpaperLarge {
-    display: none;
-  }
-} */
-
-/* desktops */
-/* @media only screen and (min-width: 1025px) {
-  #wallpaperSmall {
-    display: none;
-  }
-  #wallpaperMedium {
-    display: none;
-  }
-  #wallpaperLarge {
-    display: block;
-  }
-} */
-
-/* @media only screen and (orientation: landscape) {
-  orientation {background-color: #0000ff;}} */
+}

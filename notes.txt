@@ -31,14 +31,13 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/WebKit_Extensions
 The Web Content Accessibility Guidelines (WCAG) specify a minimum size of 44 by 44 CSS pixels for all interactive elements.
 
 Use flex grid
-
 Responsive Web Design
-
 Taking the flexible layout concept, and formula, and reapplying it to all parts of a grid will create a completely dynamic website, scaling to every viewport size. For even more control within a flexible layout, you can also leverage the min-width, max-width, min-height, and max-height properties.
 
 Size: 1600px x 900px
 use center
 proportions: 9:16
+
 
 Not recommended?:
 /* size info from https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
@@ -89,3 +88,252 @@ if (isMobile) { }
   background-size: contain;
   background-color: rgba(175, 238, 238, .1);
 } */
+
+
+
+const newWallpaper = document.createElement('div')
+const openingImg = document.getElementById('background-image')
+const generate = document.getElementById('visible')
+const startOver = document.getElementById('start-over')
+// const backgroundColor = document.createElement('div')
+// const localStorage = window.localStorage
+
+// https://stackoverflow.com/questions/6887183/how-to-take-screenshot-of-a-div-with-javascript
+// function test(width, height) {
+//   const smallWallpaper = document.getElementById('wallpaperSmall')
+//   let context = smallWallpaper.getContext('2d')
+//   context.fillRect(0, 0, 500, 800)
+//   context.font = "48px cursive"
+//   context.fillStyle = '#ffa500'
+//   context.textAlign = "center"
+//   context.textBaseline = 'middle'
+//   context.fillText = (quote, 250, 250)
+  
+//   return smallWallpaper
+// }
+
+// generateButton.addEventListener("click", () => {
+//   test()
+//   generate.style.display = 'none'
+//   openingImg.style.display = 'none'
+//   // let newWallpaper = smallWallpaper.toDataURL("image/png")
+//   // document.write('<img src="'+newWallpaper+'"/>>')
+// })
+
+// function save(image, imageName) {
+//   let link = document.createElement('a')
+//   link.download = imageName
+//   link.href = 'data:', + image
+//   link.click()
+// }
+
+// function createWallpaper() {
+//   const test = document.querySelector('smallWallpaper')
+//   let ctx = test.getContext('2d')
+//   ctx.fillStyle = 'red'
+//   ctx.fillRect(10, 10, 100, 100)
+// }
+
+// function createWallpaper() {
+//   // if (smallWallpaper.getContext) {
+//    let context = smallWallpaper.getContext('2d')
+//    smallWallpaper.height = 400
+//     smallWallpaper.width = 300
+//     let randomColor = randomizeArray(colorArray)
+//     // context.fillStyle = randomColor
+//     context.fillStyle = 'red'
+
+//     //add overlay
+//     // context.fillRect(25, 25, 200, 200)
+//     // context.strokeRect(50, 50, 100, 100)
+
+//     // get quote
+//     let quote = "The Price of Anything"
+//     // let quote = randomizeArray(quoteArray)
+//     context.fillText = (quote, 0, 0)
+
+//     //quote in font
+//     // let font = randomizeArray(fontArray)
+//     // smallWallpaper.style.fontFamily = "Rochester"
+//     context.font = "48px Arial"
+
+//     context.textAlign = "center"
+//     context.textBaseline = 'bottom'
+
+//     //add quote
+//     smallWallpaper.append(quote)
+
+//     wallpaper.download = 'image.png'
+//     // wallpaper.href = imageURL
+
+//     smallWallpaper.append(wallpaper)
+//     // smallWallpaper.click()
+//     // smallWallpaper.removeChild(wallpaper)
+
+//     return smallWallpaper.toDataURL ('image/jpeg')
+// //   } else {
+// //     alert("Your device does not support this app. The quote of was:")
+// //   }
+// }
+
+// generateButton.addEventListener('click', () => {
+  // smallWallpaper.style.fontFamily = "Lovers Quarrel"
+  // let quote = "The world breaks everyone"
+  // smallWallpaper.style.display = 'block'
+  // startOver.style.display = "block"
+  // generate.style.display = "none"
+  // createWallpaper()
+//   test(500, 800)
+  // smallWallpaper.style.height = 100vh
+  // openingImg.style.display = "none"
+//   window.open('', smallWallpaper.toDataURL())
+// })
+
+// resetButton.addEventListener('click', function () {
+//   wallpaper.style.display = "none"
+//   smallWallpaper.style.display = 'none'
+//   startOver.style.display = "none"
+//   generate.style.display = "block"
+//   openingImg.style.display = "block"
+// })
+
+// function create() {
+//   smallWallpaper.style.background = "#ffd700"
+//   smallWallpaper.style.backgroundSize = "100%"
+// }
+
+//output color in mobile size
+
+// smallWallpaper.style.maxHeight = "100%"
+// smallWallpaper.style.width = "500px"
+
+
+
+html
+  <!-- <canvas id="wallpaperSmall">
+    <div class ="wallpaper">
+      add accessibility: Your browser does not support this app. 
+    </div>
+  </canvas> -->
+  <!-- <canvas id="wallpaperMedium">
+    <div id="wallpaper">
+      Your browser does not support this app.
+    </div>
+  </canvas>
+  <canvas id="wallpaperLarge">
+      <div id="wallpaper">
+      Your browser does not support this app.
+    </div>
+  </canvas> -->
+    <div id="background-image">fake wallpaper
+    <!-- <div id="overlay"> -->
+      <!-- overlay -->
+    <!-- </div> -->
+  </div>
+
+
+  const options = async () => {
+  try {
+    const response = await axios.get(apiURL)
+    console.log(response);
+    const optionList = Object.keys(response)
+    // console.log();
+    // setOptions()
+  }
+  catch (error) {
+    console.error(error)
+  }
+}
+
+
+css
+
+#background-image {
+  border: 1px solid #800080;
+  /* background: url(https://res.cloudinary.com/texasrachel/image/upload/v1628000568/red-and-blue-wallpaper-iphone-x-wallpaper-ilikewallpaper_com_vi3fzf.jpg) center no-repeat; */
+  /* background-color: rgba(128, 0, 128, .4); */
+  font-size: 20px;
+  width: 575px;
+  height: 600px;
+  z-index: 1;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  padding: 20px 20px;
+  margin: auto;
+  align-items: center;
+  align-items: center;
+  order: 1;
+}
+#overlay {
+  opacity: 0.25;
+  border: 1px solid #008800;
+  /* background-color: rgba(0, 136, 0, .5); */
+  font-size: 25px;
+  text-align:center;
+  position: relative;
+  margin: auto;
+  width: 80%;
+  height: 80%;
+  z-index: 10; 
+  order: 5;
+}
+
+/* add hover to button */
+
+/* phones */
+/* @media only screen and (max-width: 767px) {
+  #wallpaperSmall {
+    display: block;
+  }
+  #wallpaperMedium {
+    display: none;
+  }
+  #wallpaperLarge {
+    display: none;
+  }
+}  */
+
+/* tablets */
+/* @media only screen and (min-width: 768x) {
+  #wallpaperSmall {
+    display: none;
+  }
+  #wallpaperMedium {
+    display: block;
+  }
+  #wallpaperLarge {
+    display: none;
+  }
+} */
+
+/* desktops */
+/* @media only screen and (min-width: 1025px) {
+  #wallpaperSmall {
+    display: none;
+  }
+  #wallpaperMedium {
+    display: none;
+  }
+  #wallpaperLarge {
+    display: block;
+  }
+} */
+
+/* @media only screen and (orientation: landscape) {
+  orientation {background-color: #0000ff;}} */
+  /* button {
+  background-color: #ffffff;
+  border: none;
+  color: #000000;
+  text-align: center;
+  padding: 10px;
+  margin: 30px;
+  font-family: cursive;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 25px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+  min-width: 125px;
+  min-height: 50px;
+  z-index: 30;} */
