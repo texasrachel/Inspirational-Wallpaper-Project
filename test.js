@@ -32,75 +32,27 @@ console.log(b);
 
 //functions
 
-async function getQuote() {
+async function getQuote(element) {
   // removeElement(wallpaper)
+  console.log(typeof element)
   try {
     const response = await axios.get(quoteURL)
-    console.log(response.data);
-    response.data.forEach((element) => {
-      const quoteInd = document.createElement('p')
-      quoteInd.textContent = element.q
-      hiddenDiv.append(quoteInd)
-      quoteInd.setAttribute('id', 'quote-p')
-      const author = document.createElement('p')
-      author.textContent = element.a
-      hiddenDiv.append(author)
-      author.setAttribute('id', 'author-p')
-      const blockquote = document.createElement('p')
-      blockquote.innerHTML = element.h
-      hiddenDiv.append(blockquote)
-      blockquote.setAttribute('id', 'blockquote-p')
-    })
+    console.log(response.data[0].element)
+    const quote = response.data[0].element
+    const quoteLength = quote.split(' ').length
+    return quote
+    return quoteLength
   } catch (error) {
       console.error(error)
   }
 }
-    console.log(getQuote())
-    let quote = getQuote()
+// console.log(getQuote)
 
-// const getQuote = async () => {
-//   // removeElement(wallpaper)
-//   try {
-//     const response = await axios.get(quoteURL)
-//     console.log(response.data);
-//     response.data.forEach((element) => {
-//       const quoteInd = document.createElement('p')
-//       quoteInd.textContent = element.q
-//       hiddenDiv.append(quoteInd)
-//       quoteInd.setAttribute('id', 'quote-p')
-//       const author = document.createElement('p')
-//       author.textContent = element.a
-//       hiddenDiv.append(author)
-//       author.setAttribute('id', 'author-p')
-//       const blockquote = document.createElement('p')
-//       blockquote.innerHTML = element.h
-//       hiddenDiv.append(blockquote)
-//       blockquote.setAttribute('id', 'blockquote-p')
-//       // console.log(author)
-//       // console.log(quoteInd)
-//     })
-// // console.log(hiddenDiv)
-    // console.log(document.getElementById('author-p').innerText)
-    // console.log(typeof 'author-p')
-
-  //   } catch (error) {
-  //     console.error(error)
-  // }
-  // const quote = document.getElementById('author-p').innerText
-
-// let quote = "Hello animals and others"
-// console.log(document.getElementById('author-p').innerText)
-// console.log(quote)
-// let quoteLength = quote.split(' ').length
-let quoteLength = 3
-// console.log(quoteLength);
-
-// const indiv = async () => {
-//   const ind = await getQuote()
-//   // console.log(Object.entries(indiv))
+// function test() {
+//   getQuote(q)
+//   // console.log(q)
 // }
-// indiv()
-
+// test()
 // http://www.java2s.com/Tutorials/HTML_CSS/HTML5_Canvas_Reference/strokeText.htm
 
 function reset() {
@@ -146,9 +98,6 @@ function wrap(context, quote, wallWidth, wallHeight, maxWidth, lineHeight) {
 function wall() {
   let randomColor = colorArray[Math.floor(Math.random() * colorArray.length)]
   // let randomFont = fontArray[Math.floor(Math.random() * fontArray.length)]
-  // document.getElementById('one').style.fontFamily = randomFont.value
-  // console.log(randomColor);
-  // console.log(randomFont);
 
   //below works!
   let randomFont = ("50px Cursive")
@@ -158,16 +107,17 @@ function wall() {
   context.fillStyle = randomColor
   context.fillRect(0, 0, wallWidth, wallHeight)
 
+  getQuote('q')
+  console.log(quotelength)
+
   if (quoteLength > 2) {
     function drawQuote(text, x, y) {
-      // let quoteFont = randomFont
-      // console.log("font: " + quoteFont);
       context.font = randomFont
       console.log(context.font)
       context.fillStyle = 'blue'
       context.fillText(quote, x, y)
       context.textAlign = 'center'
-      // context.textBaseLine = 'middle'
+
     }
     drawQuote(quote, wallWidth / 2, wallHeight / 2)
   } else

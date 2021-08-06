@@ -386,3 +386,60 @@ q: "The best way to predict your future is to create it.", a: "Abraham Lincoln",
 //   // console.log(Object.entries(indiv))
 // }
 // indiv()
+
+
+
+// const getQuote = async () => {
+//   // removeElement(wallpaper)
+//   try {
+//     const response = await axios.get(quoteURL)
+//     console.log(response.data);
+//     response.data.forEach((element) => {
+//       const quoteInd = document.createElement('p')
+//       quoteInd.textContent = element.q
+//       hiddenDiv.append(quoteInd)
+//       quoteInd.setAttribute('id', 'quote-p')
+//       const author = document.createElement('p')
+//       author.textContent = element.a
+//       hiddenDiv.append(author)
+//       author.setAttribute('id', 'author-p')
+//       const blockquote = document.createElement('p')
+//       blockquote.innerHTML = element.h
+//       hiddenDiv.append(blockquote)
+//       blockquote.setAttribute('id', 'blockquote-p')
+//       // console.log(author)
+//       // console.log(quoteInd)
+//     })
+// // console.log(hiddenDiv)
+    // console.log(document.getElementById('author-p').innerText)
+    // console.log(typeof 'author-p')
+
+  //   } catch (error) {
+  //     console.error(error)
+  // }
+  // const quote = document.getElementById('author-p').innerText
+
+
+// const indiv = async () => {
+//   const ind = await getQuote()
+//   // console.log(Object.entries(indiv))
+// }
+// indiv()
+
+
+    // response.data.forEach((element) => {
+    //   const quoteInd = document.createElement('p')
+    //   quoteInd.textContent = element.q
+    //   hiddenDiv.append(quoteInd)
+    //   quoteInd.setAttribute('id', 'quote-p')
+
+    //   const author = document.createElement('p')
+    //   author.textContent = element.a
+    //   hiddenDiv.append(author)
+    //   author.setAttribute('id', 'author-p')
+
+    //   const blockquote = document.createElement('p')
+    //   blockquote.innerHTML = element.h
+    //   hiddenDiv.append(blockquote)
+    //   blockquote.setAttribute('id', 'blockquote-p')
+    // })
