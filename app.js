@@ -63,28 +63,29 @@ let xStart = (wallWidth - maxWidth) / 2
     context.save()
   }
 function wrap(quote) {
-  // screen(size)
-    let words = quote.split(' ')
-    console.log(words.length)
-    let line = ' '
-    context.fillStyle = 'ivory'
+  screen(size)
+  context.fillStyle = 'ivory'
   let yStart = 30
   let fontSize = 15
-    for (let i = 0; i < words.length; i++) {
-      const lineHeight = fontSize * 1.3
-      let testLine = line + words[i] + ' '
-      let metrics = context.measureText(testLine)
-      let testWidth = metrics.width
-      if (testWidth > maxWidth && i > 0) {
-        context.fillText(line, xStart, yStart)
-        console.log(context.fillText)
-        line = words[i] + ' '
-        yStart += lineHeight
-      } else {
-        line = testLine
-      }
-    };
-  }
+  let words = quote.split(' ')
+  let line = ' '
+  const lineHeight = fontSize * 1.3
+
+  for (let i = 0; i < words.length; i++) {
+    let testLine = line + words[i] + ' '
+    let metrics = context.measureText(testLine)
+    let testWidth = metrics.width
+    if (testWidth > maxWidth) {
+      context.fillText(line, xStart, yStart)
+      console.log(context.fillText)
+      line = words[i] + ' '
+      yStart += lineHeight
+    } else {
+      line = testLine
+    }
+  };
+  context.fillText(line,xStart,yStart)
+}
 //changes color
 function wall() {
   let randomColor = colorArray[Math.floor(Math.random() * colorArray.length)]
@@ -103,12 +104,12 @@ function save() {
   link.click()
   link.delete
 }
-// function screen(size) {
-//   if (size.matches) {
-//     fontSize = 15
-//   } else
-//     fontSize = 25
-// }
+function screen(size) {
+  if (size.matches) {
+    fontSize = 15
+  } else
+    fontSize = 25
+}
 
 button.addEventListener("click", () => {
     wallpaper.style.visibility = "visible"
