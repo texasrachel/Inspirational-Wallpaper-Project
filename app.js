@@ -1,140 +1,132 @@
-//https://forums.tumult.com/t/block-rotation-smartphone/6362/2
-// /if (window.innerHeight < window.innerWidth) { // portrait orientation
-//   // show a message that asks the user to use portrait mode
-//   myElement = document.getElementById('ELEMENT_ID')
-//   myElement.innerHTML = "Please use Portrait Orientation";
-// }
+const button = document.getElementById("button");
+const visible = document.getElementById('visible')
+const hiddenButton = document.getElementById("hidden-button")
+const saveButton = document.getElementById("save-button")
+const fontArray = [
+  'Alex Brush',
+  'Amatic SC',
+  'Lovers Quarrel',
+  'Rochester',
+  'Shadows Into Light'
+]
+const hiddenDiv = document.getElementById('quote-div')
+const colorArray = [
+  "#ee9b00",
+  "#005f73",
+  "#656d4a",
+  '#c2c5aa',
+  '#6c757d',
+  '#577590',
+  '#ecbcfd',
+  '#6495ed',
+  '#892b64',
+  '#5c4d7d'
+]
+const quoteURL = "https://zenquotes.io/api/random/84dcbeb778e17abd111cc16ad76e1e4caac13370?"
 
-//temporary code
+const wallpaper = document.getElementById("wallpaper");
+const context = wallpaper.getContext('2d')
+let size = window.matchMedia('(max-width: 99xpx)')
+const wallWidth = wallpaper.width
+const wallHeight = wallpaper.height
 
-const backgroundColor = document.createElement('div')
-const wallpaper = document.createElement('div')
-const localStorage = window.localStorage
-const image = document.getElementById('image')
+let x = wallWidth / 4
+let y = wallHeight / 4
+let maxWidth = wallWidth * 0.9
+let xStart = (wallWidth - maxWidth) / 2
 
-const overlay = document.getElementById('overlay')
-const input = document.getElementById('input')
-const button = document.getElementById('button') //?? check code
+//wallpaper generation 
+// https://www.javascripttutorial.net/web-apis/javascript-canvas/
+// https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
+// https://www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/
 
-// // save colors into array and stringify for localStorage
-// const colorArray = ['ee9b00', '005f73', '656d4a', 'c2c5aa', '6c757d', '577590', 'ecbcfd', 'c8e7ff', '892b64', '5c4d7d', 'fad2e1', 'd6e2e9', '4ecdc4', 'ee964b', 'b2967d']
-// //below necessary?
-// let colors = localStorage.setItem('colors', JSON.stringify(colorArray))
-
-//font array
-// const fontArray = ["
-//   'Alex Brush',
-//   'Amatic SC',
-//   'Lovers Quarrel',
-//   'Rochester',
-//   'Shadows Into Light',
-//   cursive
-// "]
-
-//saving to local storage
-//localStorage.setItem('key', 'value')
-
-// let backgroundColor = JSON.parse(localStorage.getItem("green"))
-// let backgroundColor = {"color": "green"}
-// store in localStorage: let colorString = JSON.stringify(green)
-// use in JS: let colorObject = JSON.parse(colorString)
-// let colorInput = localStorage.setItem('backgroundColor', colorString)
-// localStorage.getItem('backgroundColor')
-// localStorage.removeItem('backgroundColor')
-// localStorage.clear()
-// let keyName = localStorage.key(index)
-
-// let newWallpaper.style.background = backgroundColor
-
-wallpaper.style.backgroundColor = "green"
-wallpaper.style.fontFamily = "Rochester"
-
-// //randomize font
-// function randomizeArray(array) {
-//   let length = array.length
-//   index = Math.floor(Math.random() * length)
-// }
-// let randomFont = randomizeArray(fontArray)
-// document.getElementById('font').innerHTML = randomFont
-
-// //randomize color
-// let randomColor = randomizeArray(colorArray)
-// document.getElementById('color').innerHTML = randomColor
-
-//output color in mobile size
-wallpaper.style.height = "900px"
-wallpaper.style.width = "1600px"
-
-//add overlay
-
-//get quote
-let quote = "hello"
-
-//quote in font
-
-//add quote
-wallpaper.append(quote)
-// console.log(return);
-
-//function to get new Wallpaper
-// function newWallpaper() {
-  
-// }
-
-//event listener
-// input.addEventListener('submit', function (e) {
-//  stops form from submission
-//   e.preventDefault()
-
-//   newWallpaper(input.value)
-//   input.value = ''
-//   localStorage.setItem(backgroundColor, green)
-// })
-
-//clear stored wallpaper
-//button.addEventListener('click', function (){
-// localStorage.clear()
-// })
-
-//save image from https://html.com/javascript/popup-windows/
-function popupImage(myform, windowname) {
-    if (!window.focus) return true;
-    window.open('', windowname, 'height=200,width=400,scrollbars=yes');
-    myform.target = windowname;
-    return true;
+//pulls quotes
+  const getQuote = async () => {
+    wall()
+    try {
+      const response = await axios.get(quoteURL)
+      const quote = response.data[0].q
+      hiddenDiv.append(quote)
+      wrap(quote)
+    } catch (error) {
+        console.error(error)
+    }
   }
-function targetopener(mylink, closeme, closeonly) {
-    if (!(window.focus && window.opener)) return true; window.opener.focus(); if (!closeonly) window.opener.location.href = mylink.href; if (closeme) window.close(); return false;
-}
-window.open(href, windowname, 'type=fullWindow,fullscreen,scrollbars=no');
 
-function showWallpaper() {
-  let image = document.getElementById('image')
-  img.src = "picture.jpg"
-  img.style.display="block"
+  // http://www.java2s.com/Tutorials/HTML_CSS/HTML5_Canvas_Reference/strokeText.htm
+
+  function reset() {
+    context.setTransform(1, 0, 0, 1, 0, 0)
+    context.clearRect(0, 0, wallWidth + 10, wallHeight + 10)
+    context.fillStyle = 'pink'
+    context.fillRect(0, 0, wallWidth, wallHeight)
+    context.save()
+  }
+function wrap(quote) {
+  // screen(size)
+    let words = quote.split(' ')
+    console.log(words.length)
+    let line = ' '
+    context.fillStyle = 'ivory'
+  let yStart = 30
+  let fontSize = 15
+    for (let i = 0; i < words.length; i++) {
+      const lineHeight = fontSize * 1.3
+      let testLine = line + words[i] + ' '
+      let metrics = context.measureText(testLine)
+      let testWidth = metrics.width
+      if (testWidth > maxWidth && i > 0) {
+        context.fillText(line, xStart, yStart)
+        console.log(context.fillText)
+        line = words[i] + ' '
+        yStart += lineHeight
+      } else {
+        line = testLine
+      }
+    };
+  }
+//changes color
+function wall() {
+  let randomColor = colorArray[Math.floor(Math.random() * colorArray.length)]
+  let randomFont = fontArray[Math.floor(Math.random() * fontArray.length)]
+  context.font = ('20px ' + randomFont + ", cursive")
+  context.globalAlpha = 1
+  context.globalCompositeOperation = "source-over"
+  context.fillStyle = randomColor
+  context.fillRect(0, 0, wallWidth, wallHeight)
 }
 
-//https://stackoverflow.com/questions/30694433/how-to-give-browser-save-image-as-option-to-button
 function save() {
-  window.open(wallpaper.toDataURL('image/png'))
-  let gh = wallpaper.toDataURL('png')
-  let a = document.createElement('a')
-  a.href = gh
-  a.download = 'image.png'
-  a.click()
+  let link = document.createElement('a')
+  link.download = 'download.png'
+  link.href = wallpaper.toDataURL()
+  link.click()
+  link.delete
 }
-//or
-let buttonDownload = document.getElementById('btn-download')
-buttonDownload.addEventListener('click', function (e) {
-  let dataURL = wallpaper.toDataURL('image/png')
-  wallpaper.href = dataURL
-})
+// function screen(size) {
+//   if (size.matches) {
+//     fontSize = 15
+//   } else
+//     fontSize = 25
+// }
 
-// let mobileHeight = window.screen.height
-// if orientation = portrait {
-//   mobileWidth = mobileHeight / 9 * 16
-// }
-// if orientation = landscape {
-//   mobileWidth= mobileHeight / 16 * 9
-// }
-// console.log(mobileHeight);
+button.addEventListener("click", () => {
+    wallpaper.style.visibility = "visible"
+    hiddenButton.style.visibility = 'visible'
+    saveButton.style.visibility = 'visible'
+    getQuote()
+    button.style.visibility = 'hidden'
+    visible.style.visibility = 'hidden'
+  });
+
+hiddenButton.addEventListener('click', () => {
+    reset()
+    button.style.visibility = 'visible'
+    visible.style.visibility = 'visible'
+    hiddenButton.style.visibility = 'hidden'
+    wallpaper.style.visibility = 'hidden'
+    saveButton.style.visibility = 'hidden'
+  })
+saveButton.addEventListener('click', () => {
+  save()
+})
