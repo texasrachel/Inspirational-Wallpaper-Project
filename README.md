@@ -1,5 +1,5 @@
 # Project/App Title: 
-Motivational Wallpaper
+[Motivational Wallpaper](https://texasrachel.github.io/Inspirational-Wallpaper-Project/)
 
 ## Project/App Description:
 This app will be made for mobile users. It will take a random quote and output a "prettified" wallpaper. The quote from the API will be turned into decorative text. Then it will overlay the quote on a colored background.
@@ -36,27 +36,31 @@ ZenQuotes allows 3 API calls/30 seconds
 ![](https://res.cloudinary.com/texasrachel/image/upload/v1627879189/CleanShot_2021-08-01_at_23.39.28_mbcdmz.png)
 
 ## MVP:
-- Have 5 fonts randomized from Google fonts loaded
-- Have 10 colors randomized
-- Have an transparent block for the quotes
-- Call the quotes
-- Media queries for size output
-- Return to home
+
+- [x] Have 5 fonts randomized from Google fonts loaded
+- [x] Have 10 colors randomized
+- ~~Have an transparent block for the quotes~~
+  >-Not needed for readability
+- [x] Call the quotes
+- [x] Media queries for size output
+
+- [x] Return to home
 
 ## Post-MVP:
-- Button that pop-ups the image for saving, removing previous screen
-- Ability to choose colors
-- Images as background
-- Ability to choose quote output color
-> - Change in device orientation changes output orientation
+- [] Button that pop-ups the image for saving, removing previous screen
+  >-added buttons that work without popup
+- [] Ability to choose colors
+- [] Images as background
+- [] Ability to choose quote output color
 
 ## Goals/Project Schedule:
 | Day | Deliverable | Status|
 | --------- | ----------------------------------- | ----------- |
 | August 2| Project set-up, approval  | Completed |
 | August 3| HTML, CSS setup <br> > Render data and Javascript | Completed |
-| August 4| Javascript <br> > Clean up |  |
-| August 5| Presentation |  |
+| August 4| Javascript  | Completed  |
+| August 5| Clean up | Completed |
+| August 6| Presentation |  |
 
 ## Priority Matrix:
 ![](https://res.cloudinary.com/texasrachel/image/upload/v1627878442/Priority_jpcxnl.png)
@@ -65,21 +69,18 @@ ZenQuotes allows 3 API calls/30 seconds
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time|
 | -------------- | -------------- | ------------- | ------------- |------------- |
-| HTML Code | H | 3hrs | 2 | |
-| CSS Code | H | 3hrs | 2 | |
-| Javascript Psuedocode | H | 3hrs | 1 | |
-| HTML Code | H | 3hrs | 1.5 | |
-| CSS Code | H | 3hrs | 1 | |
-| Javascript Psuedocode | H | 3hrs | | |
-| Javascript Functions | H | 5hrs | | |
-| Randomize colors | M | 1.5hr | | |
-| Randomize fonts | M | 1.5hr | 0.5 | |
-| Javascript loops | H | 3hrs | | |
-| Call API | H | 3hrs | .5 | |
-| Add event listeners | H | 2hrs | | |
-| Create & style DOM elements | H | 4hrs | | |
-| Add "new" screen image | L | 1hr | | |
-| Return to home screen| M | 1hr | | |
-| Cleaning up code | L | 3hrs | | |
-| Testing| L | 3hrs | | |
-|Total |  | 37hrs | |
+| HTML Code | H | 3hrs | 2 | 2 | 
+| CSS Code | H | 3hrs | 4 | 4 | 
+| Javascript Psuedocode | H | 3hrs | 1 | 1 | 
+| Javascript Functions | H | 5hrs | 10 | 10 |
+| Randomize colors | M | 1.5hr | 1 | 1 |
+| Randomize fonts | M | 1.5hr | 3 | 3 |
+| Javascript loops | H | 3hrs | 3 | 3 |
+| Call API | H | 3hrs | .5 | 3 |
+| Add event listeners | H | 2hrs | 2 | 2 |
+| Create & style DOM elements | H | 4hrs | 3 | 3 |
+| Add "new" screen image | L | 1hr | 1 | 1 |
+| Return to home screen| M | 1hr | 1 | 1 |
+| Cleaning up code | L | 3hrs | 5 | 5 |
+| Testing| L | 3hrs | 3 | 3 |
+|Total |  | 37hrs | 41 | 41 |
