@@ -3,83 +3,142 @@
 const button = document.getElementById("button");
 const visible = document.getElementById('visible')
 const hiddenButton = document.getElementById("hidden-button")
-const wallpaper = document.getElementById("wallpaper");
 const colorArray = ["thistle", "palevioletred", "lavender", "lime", "peru"];
 const fontArray = ['Shadows Into Light', 'Alex Brush']
-const quote = "The Price of Anything"
+const hiddenDiv = document.getElementById('quote-hidden')
+
 const apiURL = "https://zenquotes.io/api/quotes/"
-const quoteURL = "https://zenquotes.io/api/random/84dcbeb778e17abd111cc16ad76e1e4caac13370"
-const wallWidth = wallpaper.width
-const wallHeight = wallpaper.height
-const fontDiv = document.getElementById('font-div')
+const quoteURL = "https://zenquotes.io/api/random/84dcbeb778e17abd111cc16ad76e1e4caac13370?&a"
 
 //wallpaper generation 
 //https://www.javascripttutorial.net/web-apis/javascript-canvas/
 //https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
 
-// function randomizeArray(array) {
-//   let length = array.length
-//   index = Math.floor(Math.random() * length)
-// }
-//size elements
-
 //functions
 
-//get quote WORKS
-// async function getQuote() {
-//   // removeElement(wallpaper)
-//   try {
-//       const response = await axios.get(quoteURL)
-//       console.log(response.data);
-
-//     } catch (error) {
-//       console.error(error)
-//     }
-// }
-// getQuote(apiURL)
+const getQuote = async () => {
+  // removeElement(wallpaper)
+  try {
+    const response = await axios.get(quoteURL)
+    console.log(response.data);
+    response.data.forEach((element) => {
+      const quoteInd = document.createElement('p')
+      quoteInd.textContent = element.q
+      hiddenDiv.append(quoteInd)
+      const author = document.createElement('p')
+      author.textContent = element.a
+      hiddenDiv.append(author)
+      const blockquote = document.createElement('p')
+      blockquote.innerHTML = element.h
+      hiddenDiv.append(blockquote)
+      // console.log(author)
+      // console.log(quoteInd)
+    })
+console.log(hiddenDiv)
+    } catch (error) {
+      console.error(error)
+  }
+}
+console.log(getQuote)
+const indiv = async () => {
+  const ind = await getQuote()
+  // console.log(Object.entries(indiv))
+}
+indiv()
 
 //http://www.java2s.com/Tutorials/HTML_CSS/HTML5_Canvas_Reference/strokeText.htm
 
+function reset() {
+  let context = wallpaper.getContext('2d')
+  context.setTransform(1,0,0,1,0,0)
+  context.clearRect(0, 0, wallWidth, wallHeight)
+  context.restore()
+  context.save()
+
+  // while (element.lastChild) {
+  //   element.removeChild(element.lastChild)}
+}
+https://www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/
+
+function wrap(context, quote, wallWidth, wallHeight, maxWidth, lineHeight) {
+  //split quote for wrapping
+  let words = quote.split(' ')
+  let line = ' '
+  // console.log(context.measureText(words))
+
+  for (let i = 0; i < words.length; i++) {
+    let testLine = line + words[i] + ' '
+    // console.log("testLine " + [i] + testLine)
+    let metrics = context.measureText(testLine)
+    // console.log("metrics " + metrics)
+    let testWidth = metrics.width
+    // console.log("testWidth " + testWidth)
+    if (testWidth > maxWidth && i > 0) {
+      context.fillText(line, xStart, yStart)
+      line = words[i]
+      // console.log("line " + line)
+      yStart += lineHeight
+      // console.log("ystart: " + yStart)
+    } else {
+      line = testLine
+      // console.log("line " + line)
+    }
+  };
+  let x = context.fillText(line, wallWidth, wallHeight)
+  return x
+  console.log(x);
+}
+
+const wallpaper = document.getElementById("wallpaper");
+const context = wallpaper.getContext('2d')
+const wallWidth = wallpaper.width
+let wallHeight = wallpaper.height
+let x = wallWidth / 4
+let y = wallHeight / 4
+let maxWidth = wallWidth * 0.9
+const lineHeight = 30
+const xStart = (wallWidth - maxWidth) / 2
+let yStart = 30
+let quote = "Hello animals and others"
+let quoteLength = quote.split(' ').length
+console.log(quoteLength);
+// context.font = "20px Arial"
+// context.fillStyle = "gold"
+const [a, b] = fontArray
+console.log(a);
+console.log(b);
+
 function wall() {
   let randomColor = colorArray[Math.floor(Math.random() * colorArray.length)]
-  let randomFont = fontArray[Math.floor(Math.random() * fontArray.length)]
+  // let randomFont = fontArray[Math.floor(Math.random() * fontArray.length)]
+  // document.getElementById('one').style.fontFamily = randomFont.value
+  // console.log(randomColor);
+  // console.log(randomFont);
 
-  const context = wallpaper.getContext('2d')
-  context.save()
+  //below works!
+  let randomFont = ("50px Cursive")
+
   context.globalAlpha = 1
   context.globalCompositeOperation = "source-over"
   context.fillStyle = randomColor
   context.fillRect(0, 0, wallWidth, wallHeight)
 
-  function drawOverlay(e) {
-    context.fillStyle = '#000000'
-    context.globalAlpha = 0.2
-    context.scale(0.67, 0.67)
-    context.fillRect(wallWidth/4, wallHeight/4, wallWidth, wallHeight)
-  }
-
-  function drawQuote(text, x, y) {
-    context.font = `"50px" + ${randomFont} + cursive`
-    context.fillStyle = 'blue'
-    context.fillText(text, x, y)
-    context.textAlign = 'center'
-    context.textBaseLine = 'middle'
-  }
-  drawOverlay()
-  drawQuote("hello", wallWidth/2, wallHeight/2)
-
-  hiddenButton.addEventListener('click', () => {
-    context.setTransform(0,0,0,0,0,0)
-    context.clearRect(0, 0, wallWidth, wallHeight)
-    context.restore()
-  })
+  if (quoteLength > 2) {
+    function drawQuote(text, x, y) {
+      // let quoteFont = randomFont
+      // console.log("font: " + quoteFont);
+      context.font = randomFont
+      console.log(context.font)
+      context.fillStyle = 'blue'
+      context.fillText(quote, x, y)
+      context.textAlign = 'center'
+      // context.textBaseLine = 'middle'
+    }
+    drawQuote(quote, wallWidth / 2, wallHeight / 2)
+  } else
+  wrap(context, quote, wallWidth, wallHeight, maxWidth, lineHeight)
 }
-function reset() {
 
-  while (element.lastChild) {
-    element.removeChild(element.lastChild)
-  }
-}
 button.addEventListener("click", () => {
   wallpaper.style.visibility = "visible"
   hiddenButton.style.visibility = 'visible'
@@ -89,6 +148,7 @@ button.addEventListener("click", () => {
 });
 
 hiddenButton.addEventListener('click', () => {
+  reset()
   button.style.visibility = 'visible'
   visible.style.visibility = 'visible'
   hiddenButton.style.visibility = 'hidden'

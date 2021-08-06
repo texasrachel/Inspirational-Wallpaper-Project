@@ -55,7 +55,6 @@ button:active {
 footer {
   order: 7;
   text-align: center;
-
 }
 
 #wallpaper {
@@ -85,16 +84,23 @@ footer {
   visibility: hidden;
   background-color: rgba(255, 255, 255, .3);
 }
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media (min-width: 992px) {
-  div {
-    font-size: 50px;
-  }
+#quote {
+  /* visibility: hidden; */
+}
+/* Smaller devices (mobile phones/tablets) */
+@media screen only and (max-width: 991px) {
   #wallpaper{
-    width: 500px;
-    height: 500px;
+    max-width: 991px;
     margin: auto;
     font-size: 50px;
   }
+  /* button at bottom */
+}
+/* Larger devices (laptops/desktops, 992px and up) */
+@media screen only and (min-width: 992px) {
+  #wallpaper{
+    margin: auto;
+    font-size: 50px;
+  }
+  /* button at top */
 }

@@ -337,3 +337,52 @@ css
   min-width: 125px;
   min-height: 50px;
   z-index: 30;} */
+
+
+// console.log(wrap());
+
+  // let wordsLength = indQuote.length
+  // let currentLine = 0
+  // let i =0
+  // let addtxt = ''
+  // //add text and rows
+  // while (words.length > 0 && i <= words.length) {
+  //   let string = words.slice(0, i).join(' ')
+  //   let line = context.measureText(string).width
+  //   if (line > fitWidth) {
+  //     if (i == 1) {
+  //       i=2
+  //     }
+  //     context.filltext(words.slice(0, i - 1).join(' '), x, y + (lineHeight * currentLine))
+  //     currentLine++
+  //     words = words.splice(i - 1)
+  //     i = 1
+  //   } else {
+  //     i++
+  //   }
+  //   if (i > 0)
+  //     context.fillText(words.join(' '), x, y + (lineHeight*currentLine))
+  // }
+
+    // function drawOverlay(e) {
+  //   context.fillStyle = '#000000'
+  //   context.globalAlpha = 0.2
+  //   context.scale(0.67, 0.67)
+  //   context.fillRect(wallWidth/4, wallHeight/4, wallWidth, wallHeight)
+  // }
+
+  // window.open('', document.getElementById('wallpaper').toDataURL());
+
+
+
+q: "The best way to predict your future is to create it.", a: "Abraham Lincoln", h: "<blockquote>&ldquo;The best way to predict your fu…sh; <footer>Abraham Lincoln</footer></blockquote>"}a: "Abraham Lincoln"h: "<blockquote>&ldquo;The best way to predict your future is to create it.&rdquo; &mdash; <footer>Abraham Lincoln</footer></blockquote>"q: "The best way to predict your future is to create it."[[Prototype]]: Object
+
+
+// getQuote()
+// console.log(getQuote)
+
+// const indiv = async () => {
+//   const ind = await getQuote()
+//   // console.log(Object.entries(indiv))
+// }
+// indiv()
