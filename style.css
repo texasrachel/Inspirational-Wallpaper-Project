@@ -11,7 +11,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 100vh;
+  height: 100%;
 }
 container {
   z-index: 1;
@@ -111,7 +111,7 @@ footer {
     max-width: 991px;
     margin: auto;
     font-size: 50px;
-    height: 100vh;
+    min-height: 700px;
   }
 }
 /* Larger devices (laptops/desktops, 992px and up) */
@@ -119,6 +119,6 @@ footer {
   #wallpaper{
     margin: auto;
     font-size: 50px;
-    height: 100vh;
+    min-height: 1760px;
   }
 }

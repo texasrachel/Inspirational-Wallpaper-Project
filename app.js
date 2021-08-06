@@ -69,7 +69,7 @@ function wrap(quote) {
   let fontSize = 15
   let words = quote.split(' ')
   let line = ' '
-  const lineHeight = fontSize * 1.3
+  const lineHeight = fontSize * 1.4
 
   for (let i = 0; i < words.length; i++) {
     let testLine = line + words[i] + ' '
@@ -77,7 +77,6 @@ function wrap(quote) {
     let testWidth = metrics.width
     if (testWidth > maxWidth) {
       context.fillText(line, xStart, yStart)
-      console.log(context.fillText)
       line = words[i] + ' '
       yStart += lineHeight
     } else {
