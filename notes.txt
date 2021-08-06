@@ -443,3 +443,116 @@ q: "The best way to predict your future is to create it.", a: "Abraham Lincoln",
     //   hiddenDiv.append(blockquote)
     //   blockquote.setAttribute('id', 'blockquote-p')
     // })
+
+
+
+//   while (quote.length) {
+//     for (i = quote.length; context.measureText(context.substr(0, i)).width > max_width; i--);
+//     result = quote.substr(0, i);
+
+//     if ( i !== quote.length )
+//       for( j=0; result.indexOf(" ",j) !== -1; j=result.indexOf(" ",j)+1 );
+
+//       lines.push(result.substr(0, j|| result.length) );
+//       width = Math.max(width, context.measureText(lines[lines.length-1 ]).width );
+//       text  = text.substr( lines[ lines.length-1 ].length, text.length );
+//   }
+  
+//   }
+// }
+
+// let newWallpaper = function () {
+//   let rectHeight = 50
+//   context.fillStyle = blue
+//   let quote = getQuote()
+//   // console.log(quote)
+//   drawWords(context, quote, x, y, maxWidth, lineHeight, rectHeight, words)
+// }
+
+let wallWidth = wallpaper.width
+let wallHeight = wallpaper.height
+let x = wallWidth / 4
+let y = wallHeight / 4
+let maxWidth = wallWidth * 0.9
+const lineHeight = 30
+let xStart = (wallWidth - maxWidth) / 2
+let yStart = 30
+context.fillRect(0, 0, wallWidth, wallHeight)
+
+
+// let getQuote = async () => {
+//   try {
+//     const response = await axios.get(quoteURL)
+//     console.log(response.data[0].q)
+//     let quote = response.data[0].q
+//     console.log(quote)
+//     // return quote
+//     let quoteNew = quote.split(' ')
+//     console.log(quoteNew)
+//     let quoteLength = quote.split(' ').length
+//     console.log(quoteLength)
+//   } catch (error) {
+//     console.error(error)
+//   }
+//   function wrapText(context, quote, x, y, maxWidth, lineHeight, rectHeight) {
+//     let words = quote.split(' ')
+//     return words
+//   }
+//   function drawWords(context, quote, x, y, maxWidth, lineHeight, rectHeight, words) {
+//     let line = ' '
+
+//     for (let i = 0; i < words.length; i++) {
+//       let testLine = line + words[i] + ' '
+//       let metrics = context.measureText(testLine)
+//       let testWidth = metrics.width
+//       if (testWidth > maxWidth && i > 0) {
+//         context.fillText(line, x, y)
+//         line = words[i] + ' '
+//         y += lineHeight
+//       } else {
+//         line = testLine
+//       }
+//     }
+//     context.fillText(line, x, y)
+//     rectHeight = rectHeight + lineHeight
+//   }
+// }
+    //   if (quoteLength < 2) {
+    //     function drawQuote(text, x, y) {
+    //       context.font = randomFont
+    //       console.log(context.font)
+    //       context.fillStyle = 'blue'
+    //       context.fillText(quote, x, y)
+    //       context.textAlign = 'center'
+    //     }
+    //     drawQuote(quote, wallWidth / 2, wallHeight / 2)
+    //   } else
+    //     wrap()
+    // }
+
+  button.addEventListener("click", () => {
+    wallpaper.style.visibility = "visible"
+    hiddenButton.style.visibility = 'visible'
+    newWallpaper()
+    button.style.visibility = 'hidden'
+    visible.style.visibility = 'hidden'
+  });
+
+  hiddenButton.addEventListener('click', () => {
+    reset()
+    button.style.visibility = 'visible'
+    visible.style.visibility = 'visible'
+    hiddenButton.style.visibility = 'hidden'
+    wallpaper.style.visibility = 'hidden'
+  })
+
+  function reset() {
+    let context = wallpaper.getContext('2d')
+    context.setTransform(1, 0, 0, 1, 0, 0)
+    context.clearRect(0, 0, wallWidth, wallHeight)
+    context.restore()
+    context.save()
+
+    // while (element.lastChild) {
+    //   element.removeChild(element.lastChild)}
+  }
