@@ -22,13 +22,15 @@ const colorArray = [
   '#892b64',
   '#5c4d7d'
 ]
-const quoteURL = "https://zenquotes.io/api/random/84dcbeb778e17abd111cc16ad76e1e4caac13370?"
+// const quoteURL = "https://zenquotes.io/api/random/"
 
-const wallpaper = document.getElementById("wallpaper");
+const wallpaper = document.getElementById("wallpaper")
 const context = wallpaper.getContext('2d')
 let size = window.matchMedia('(max-width: 99xpx)')
 const wallWidth = wallpaper.width
 const wallHeight = wallpaper.height
+console.log(wallWidth)
+console.log(wallHeight)
 
 let x = wallWidth / 4
 let y = wallHeight / 4
@@ -40,28 +42,29 @@ let xStart = (wallWidth - maxWidth) / 2
 // https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
 // https://www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/
 
-//pulls quotes
-  const getQuote = async () => {
-    wall()
-    try {
-      const response = await axios.get(quoteURL)
-      const quote = response.data[0].q
-      hiddenDiv.append(quote)
-      wrap(quote)
-    } catch (error) {
-        console.error(error)
-    }
-  }
+// //pulls quotes
+// const getQuote = async () => {
+//   wall()
+//   try {
+//     const response = await axios.get(quoteURL)
+//     const quote = response.data[0].q
+//     hiddenDiv.append(quote)
+//     wrap(quote)
+//   } catch (error) {
+//     console.error(error)
+//   }
+//   console.log(quote);
+// }
 
-  // http://www.java2s.com/Tutorials/HTML_CSS/HTML5_Canvas_Reference/strokeText.htm
+// http://www.java2s.com/Tutorials/HTML_CSS/HTML5_Canvas_Reference/strokeText.htm
 
-  function reset() {
-    context.setTransform(1, 0, 0, 1, 0, 0)
-    context.clearRect(0, 0, wallWidth + 10, wallHeight + 10)
-    context.fillStyle = 'pink'
-    context.fillRect(0, 0, wallWidth, wallHeight)
-    context.save()
-  }
+function reset() {
+  context.setTransform(1, 0, 0, 1, 0, 0)
+  context.clearRect(0, 0, wallWidth + 10, wallHeight + 10)
+  context.fillStyle = 'pink'
+  context.fillRect(0, 0, wallWidth, wallHeight)
+  context.save()
+}
 function wrap(quote) {
   screen(size)
   context.fillStyle = 'ivory'
@@ -83,7 +86,7 @@ function wrap(quote) {
       line = testLine
     }
   };
-  context.fillText(line,xStart,yStart)
+  context.fillText(line, xStart, yStart)
 }
 //changes color
 function wall() {
@@ -111,22 +114,22 @@ function screen(size) {
 }
 
 button.addEventListener("click", () => {
-    wallpaper.style.visibility = "visible"
-    hiddenButton.style.visibility = 'visible'
-    saveButton.style.visibility = 'visible'
-    getQuote()
-    button.style.visibility = 'hidden'
-    visible.style.visibility = 'hidden'
-  });
+  wallpaper.style.visibility = "visible"
+  hiddenButton.style.visibility = 'visible'
+  saveButton.style.visibility = 'visible'
+  getQuote()
+  button.style.visibility = 'hidden'
+  visible.style.visibility = 'hidden'
+});
 
 hiddenButton.addEventListener('click', () => {
-    reset()
-    button.style.visibility = 'visible'
-    visible.style.visibility = 'visible'
-    hiddenButton.style.visibility = 'hidden'
-    wallpaper.style.visibility = 'hidden'
-    saveButton.style.visibility = 'hidden'
-  })
+  reset()
+  button.style.visibility = 'visible'
+  visible.style.visibility = 'visible'
+  hiddenButton.style.visibility = 'hidden'
+  wallpaper.style.visibility = 'hidden'
+  saveButton.style.visibility = 'hidden'
+})
 saveButton.addEventListener('click', () => {
   save()
 })

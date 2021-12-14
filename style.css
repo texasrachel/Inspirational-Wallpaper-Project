@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Amatic+SC&family=Lovers+Quarrel&family=Rochester&family=Shadows+Into+Light&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Amatic+SC&family=Lovers+Quarrel&family=Rochester&family=Shadows+Into+Light&display=swap");
 
 body {
   background-color: #fef0c3;
-  color: e85f5c
+  color: e85f5c;
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -13,19 +13,21 @@ body {
   justify-content: flex-start;
   height: 100%;
 }
-container {
+
+.container {
   z-index: 1;
   align-items: center;
   flex-wrap: nowrap;
   position: relative;
-  width: 100%;
-  height: 100%
+  width: 65%;
+  height: 100%;
 }
 
 div {
   align-content: space-between;
   text-align: center;
 }
+
 h1 {
   font-family: fantasy;
   color: #2b2d42;
@@ -34,27 +36,31 @@ h1 {
 }
 
 button {
-	background-color: ##8d99ae;
-	border-radius: 30px;
-	border: 1px solid #2b2d42;
-	color: #2b2d42;
-	font-family: Arial;
-	font-size: 20px;
+  background-color: #8d99ae;
+  border-radius: 30px;
+  border: 1px solid #2b2d42;
+  color: #2b2d42;
+  font-family: Arial;
+  font-size: 20px;
   width: 150px;
   height: 50px;
-	padding: 10px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px gray;
+  padding: 10px;
+  margin: 0px 0px 15px 0px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px gray;
   box-shadow: 0px 1px 0px gray;
   order: 5;
 }
+
 button:hover {
-	background-color: #8d99ae;
+  background-color: #8d99ae;
 }
+
 button:active {
-	position: relative;
-	top: 2px;
+  position: relative;
+  top: 2px;
 }
+
 footer {
   order: 7;
   text-align: center;
@@ -68,6 +74,7 @@ footer {
   display: block;
   order: 3;
 }
+
 #visible {
   font-size: 20px;
   position: absolute;
@@ -77,6 +84,7 @@ footer {
   z-index: 20;
   visibility: visible;
 }
+
 #hidden {
   font-size: 20px;
   position: absolute;
@@ -91,11 +99,13 @@ footer {
   visibility: hidden;
   display: inline-block;
 }
+
 #hidden-button {
   align-self: flex-end;
   display: inline;
   position: relative;
 }
+
 #save-button {
   align-self: flex-end;
   display: inline;
@@ -105,18 +115,20 @@ footer {
 #quote-div {
   visibility: hidden;
 }
+
 /* Smaller devices (mobile phones/tablets) */
-@media screen only and (max-width: 991px) {
-  #wallpaper{
+@media screen and (max-width: 991px) {
+  #wallpaper {
     max-width: 991px;
     margin: auto;
     font-size: 50px;
     min-height: 700px;
   }
 }
+
 /* Larger devices (laptops/desktops, 992px and up) */
-@media screen only and (min-width: 992px) {
-  #wallpaper{
+@media screen and (min-width: 992px) {
+  #wallpaper {
     margin: auto;
     font-size: 50px;
     min-height: 1760px;
