@@ -2,7 +2,7 @@
 
 body {
   background-color: #fef0c3;
-  color: e85f5c
+  color: e85f5c;
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
@@ -34,7 +34,7 @@ h1 {
 }
 
 button {
-	background-color: ##8d99ae;
+	background-color: #8d99ae;
 	border-radius: 30px;
 	border: 1px solid #2b2d42;
 	color: #2b2d42;
@@ -106,7 +106,7 @@ footer {
   visibility: hidden;
 }
 /* Smaller devices (mobile phones/tablets) */
-@media screen only and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   #wallpaper{
     max-width: 991px;
     margin: auto;
@@ -115,7 +115,7 @@ footer {
   }
 }
 /* Larger devices (laptops/desktops, 992px and up) */
-@media screen only and (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   #wallpaper{
     margin: auto;
     font-size: 50px;
